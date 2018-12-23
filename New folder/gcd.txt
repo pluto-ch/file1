@@ -1,0 +1,115 @@
+euclid
+#include<stdio.h>
+void main()
+{
+int a,b,temp;
+printf("Enter two numbers:\n");
+scanf("%d%d",&a,&b);
+while(b>0)
+{
+temp=a%b;
+a=b;
+b=temp;
+}
+printf("GCD=%d",a);
+}
+
+
+concustive
+#include<stdio.h>
+void main()
+{
+int m,n,gcd;
+printf("Enter the two integers:");
+scanf("%d %d",&m,&n);
+gcd=con(m,n);
+printf("Gcd using consecutive integer method:%d\n",gcd);
+}
+int con(int m,int n)
+{
+int t;
+if(m<n)
+{
+t=n;
+}
+else
+{
+t=m;
+}
+while(t>0)
+{
+if(m%t==0 && n%t==0)
+{
+return t;
+}
+else{
+t=t-1;
+}
+}
+}
+
+
+
+middle
+#include<stdio.h>
+void fac(int n)
+{
+int i,f,x,l;
+i=2;
+f=3;
+while(i<=n)
+{
+if(n%i==0)
+{
+x=1;
+f=0;
+while(x<=i)
+{
+if(i%x==0)
+f++;
+x++; }}
+if(f<=2)
+{
+n=n/i;
+printf("%d",i);
+i=2;
+f=3; }
+else{
+i++;}}}
+void main()
+{
+int m,n,x,f;
+printf("Enter The Two Values\n");
+scanf("%d%d",&m,&n);
+int i=2;
+int gcd=1;
+printf("Prime Factors of %d is \n",m);
+fac(m);
+printf("\n Prime Factors of %d is \n",n);
+fac(n);
+printf("\n Common Prime Factors Are:\n ");
+f=3;
+while((i<=m)&&(i<=n))
+{
+if((m%i==0)&&(n%i==0))
+{
+x=1;
+f=0;
+while(x<i)
+{
+if(i%x==0)
+f++;
+x++;
+}}
+if(f<=2)
+{
+m=m/i;
+n=n/i;
+printf("%d",i);
+gcd=gcd*i;
+f=3;
+i=2;
+} else {
+i++;}}
+printf("\n The Gcd = %d",gcd);
+}

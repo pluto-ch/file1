@@ -1,0 +1,29 @@
+#include<stdio.h>
+#include<time.h>
+void main()
+{
+int arr[100000],n,c,d,swap;
+double time_taken;
+clock_t start,end;
+printf("enter number of elements");
+scanf("%d",&n);
+for(c=0;c<n;c++)
+{
+arr[c]=random(50);
+}
+start=clock();
+for(c=0;c<n-1;c++)
+for(d=0;d<n-c-1;d++)
+{
+if(arr[d]>arr[d+1])
+{
+swap=arr[d];
+arr[d]=arr[d+1];
+arr[d+1]=swap; } }
+end=clock();
+time_taken = (end-start)/CLOCKS_PER_SEC;
+printf("sorted list in ascending order");
+for(c=0;c<n;c++)
+printf("%d\n",arr[c]);
+printf("Time complexity : %f",time_taken);
+}
